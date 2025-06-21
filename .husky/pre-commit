@@ -1,0 +1,28 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Fail on error
+set -e
+
+echo "🔍 Running pre-commit checks..."
+
+# Run lint-staged for staged files
+npx lint-staged
+
+# Type check the project (fail commit if errors)
+echo "🧑‍💻 Running TypeScript strict type check..."
+npx tsc --noEmit --pretty
+
+# Run tests (unit + e2e if present)
+if [ -f "package.json" ]; then
+  if npx --no-install jest --version >/dev/null 2>&1; then
+    echo "🧪 Running unit tests..."
+    npx jest --bail --passWithNoTests
+  fi
+  if npx --no-install playwright --version >/dev/null 2>&1; then
+    echo "🎭 Running Playwright tests (headless)..."
+    npx playwright test --bail --reporter=dot
+  fi
+fi
+
+echo "✅ Pre-commit checks passed!"
