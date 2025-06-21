@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+public/
+playwright-report/
+.storybook/
+*.config.js
+*.config.cjs
+*.stories.*
+*.md
+*.json
+
+// COMMIT_MESSAGE: chore: add strict ESLint and Prettier configuration for TypeScript project conventions
+```

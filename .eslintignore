@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+public/
+playwright-report/
+*.config.js
+*.config.cjs
+.storybook/
+*.stories.*
+*.md
+*.json
