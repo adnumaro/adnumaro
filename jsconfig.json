@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/scenes/*": ["src/scenes/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/types/*": ["src/types/*"],
+      "@/data/*": ["src/data/*"],
+      "@/public/*": ["public/*"]
+    },
+    "strict": true
+  },
+  "exclude": ["node_modules", ".next", "out"]
+}
+
+// COMMIT_MESSAGE: chore: set up absolute import aliases with jsconfig.json
