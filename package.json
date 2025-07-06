@@ -62,5 +62,3 @@
     ]
   }
 }
-
-// COMMIT_MESSAGE: chore: update package.json scripts for linting, formatting, type checking, testing, and husky install
